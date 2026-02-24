@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Invitaciones Digitales | Digital Invita</title>
+<meta name="description" content="Invitaciones digitales elegantes, modernas y personalizadas para XV años, bodas y eventos especiales.">
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+
+:root{
+  --color-principal:#c6a45f;
+  --color-oscuro:#111;
+  --color-claro:#fff;
+  --gris:#777;
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  font-family:'Montserrat', sans-serif;
+  background:#fff;
+  color:#333;
+  line-height:1.6;
+}
+
+h1,h2,h3{
+  font-family:'Playfair Display', serif;
+  font-weight:600;
+}
+
+/* HERO */
+
+.hero{
+  height:100vh;
+  background:linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5)),
+  url('https://images.unsplash.com/photo-1519741497674-611481863552') center/cover no-repeat;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  color:#fff;
+  padding:20px;
+}
+
+.hero h1{
+  font-size:clamp(32px,6vw,60px);
+  margin-bottom:20px;
+}
+
+.hero p{
+  font-size:18px;
+  margin-bottom:30px;
+}
+
+.btn{
+  display:inline-block;
+  padding:14px 30px;
+  background:var(--color-principal);
+  color:#fff;
+  text-decoration:none;
+  border-radius:30px;
+  font-weight:500;
+  transition:.3s;
+}
+
+.btn:hover{
+  background:#a8894d;
+}
+
+/* SECTIONS */
+
+section{
+  padding:80px 20px;
+  max-width:1100px;
+  margin:auto;
+  text-align:center;
+}
+
+section h2{
+  margin-bottom:40px;
+  font-size:32px;
+}
+
+/* SERVICIOS */
+
+.cards{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:30px;
+}
+
+.card{
+  padding:30px;
+  border:1px solid #eee;
+  border-radius:10px;
+  transition:.3s;
+}
+
+.card:hover{
+  transform:translateY(-5px);
+  box-shadow:0 10px 20px rgba(0,0,0,.08);
+}
+
+/* PASOS */
+
+.steps{
+  display:grid;
+  gap:25px;
+}
+
+.step{
+  background:#f9f9f9;
+  padding:25px;
+  border-radius:10px;
+}
+
+/* CTA FINAL */
+
+.cta{
+  background:var(--color-oscuro);
+  color:#fff;
+  padding:80px 20px;
+}
+
+/* FOOTER */
+
+footer{
+  background:#000;
+  color:#aaa;
+  text-align:center;
+  padding:25px;
+  font-size:14px;
+}
+
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+
+<section class="hero">
+  <div>
+    <h1>Invitaciones Digitales Elegantes</h1>
+    <p>Modernas, personalizadas y listas para compartir por WhatsApp</p>
+    <a href="#contacto" class="btn">Solicitar Información</a>
+  </div>
+</section>
+
+<!-- SERVICIOS -->
+
+<section>
+  <h2>Nuestros Servicios</h2>
+  <div class="cards">
+    <div class="card">
+      <h3>XV Años</h3>
+      <p>Diseños elegantes con galería, música y confirmación de asistencia.</p>
+    </div>
+    <div class="card">
+      <h3>Bodas</h3>
+      <p>Invitaciones modernas con itinerario, mapa y cuenta regresiva.</p>
+    </div>
+    <div class="card">
+      <h3>Eventos Especiales</h3>
+      <p>Cumpleaños, bautizos, aniversarios y más.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CÓMO FUNCIONA -->
+
+<section>
+  <h2>¿Cómo Funciona?</h2>
+  <div class="steps">
+    <div class="step">
+      <h3>1. Elige tu diseño</h3>
+      <p>Selecciona el estilo que más te guste.</p>
+    </div>
+    <div class="step">
+      <h3>2. Envíanos tu información</h3>
+      <p>Fotos, nombres, fecha y detalles del evento.</p>
+    </div>
+    <div class="step">
+      <h3>3. Recibe tu link personalizado</h3>
+      <p>Comparte fácilmente por WhatsApp o redes sociales.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+
+<section class="cta" id="contacto">
+  <h2>Haz tu evento inolvidable</h2>
+  <p style="margin:20px 0;">Cotiza hoy mismo tu invitación digital</p>
+  <a href="https://wa.me/521XXXXXXXXXX" class="btn">Enviar WhatsApp</a>
+</section>
+
+<footer>
+  © 2026 Digital Invita | Todos los derechos reservados
+</footer>
+
+</body>
+</html>
