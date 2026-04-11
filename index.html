@@ -1,0 +1,1088 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Digital Invita — Invitaciones Digitales</title>
+<link rel="icon" type="image/png" href="favicon.png">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;1,9..144,300;1,9..144,400&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --v: #8B2EF8;
+  --v2: #A855F7;
+  --v3: #EDE9FE;
+  --pk: #F0287C;
+  --pk2: #FDE7EF;
+  --tl: #06D6A0;
+  --tl2: #D1FAF0;
+  --amber: #F59E0B;
+  --bg: #FAFAFA;
+  --white: #FFFFFF;
+  --dark: #0D0420;
+  --dark2: #1E0A38;
+  --mid: #4B3866;
+  --muted: #8B7BA8;
+  --border: rgba(139,46,248,0.12);
+  --wa: #25D366;
+  --wa2: #1DB954;
+}
+
+html { scroll-behavior: smooth; }
+body { font-family: 'Plus Jakarta Sans', sans-serif; background: var(--bg); color: var(--dark); overflow-x: hidden; }
+
+/* ── NAV ── */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+  display: grid; grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  padding: 1rem 2.5rem;
+  background: rgba(250,250,250,0.92); backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border);
+}
+.nav-logo { display: flex; align-items: center; justify-content: center; text-decoration: none; }
+.nav-logo img { height: 36px; width: auto; display: block; }
+.nav-links { display: flex; gap: 1.8rem; list-style: none; justify-content: flex-end; }
+.nav-links a {
+  font-size: 0.78rem; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 500;
+  color: var(--mid); text-decoration: none; transition: color .2s;
+}
+.nav-links a:hover { color: var(--v); }
+
+/* ── HERO ── */
+.hero {
+  min-height: 100vh;
+  display: flex; align-items: center; justify-content: center; flex-direction: column;
+  text-align: center; padding: 9rem 2rem 5rem; position: relative; overflow: hidden;
+}
+.hero::before {
+  content: ''; position: absolute; top: -120px; left: 50%; transform: translateX(-50%);
+  width: 900px; height: 900px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(139,46,248,0.1) 0%, rgba(240,40,124,0.05) 50%, transparent 70%);
+  pointer-events: none;
+}
+.hero-pill {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  background: var(--v3); color: var(--v); border: 1px solid rgba(139,46,248,0.2);
+  padding: 0.4rem 1rem; border-radius: 50px; font-size: 0.75rem; font-weight: 600;
+  letter-spacing: 0.04em; margin-bottom: 1.8rem;
+  animation: fadeUp .7s .1s ease both;
+}
+.hero-pill::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--v); }
+.hero h1 {
+  font-family: 'Fraunces', serif;
+  font-size: clamp(2.8rem, 7.5vw, 5.8rem); font-weight: 300; line-height: 1.05;
+  animation: fadeUp .9s .2s ease both;
+}
+.hero h1 .line2 { display: block; font-style: italic; color: var(--v); }
+.hero-sub {
+  max-width: 480px; margin: 1.8rem auto;
+  font-size: 1rem; line-height: 1.8; color: var(--mid); font-weight: 400;
+  animation: fadeUp .9s .32s ease both;
+}
+.hero-btns {
+  display: flex; gap: 0.8rem; justify-content: center; flex-wrap: wrap; margin-top: 2.2rem;
+  animation: fadeUp .9s .42s ease both;
+}
+.btn-primary {
+  display: inline-flex; align-items: center; gap: 0.4rem;
+  background: var(--v); color: #fff; padding: 0.9rem 2.2rem; border-radius: 50px;
+  font-size: 0.85rem; font-weight: 600; text-decoration: none; letter-spacing: 0.02em;
+  transition: background .2s, transform .2s;
+  box-shadow: 0 4px 20px rgba(139,46,248,0.35);
+}
+.btn-primary:hover { background: var(--dark2); transform: translateY(-2px); box-shadow: 0 8px 28px rgba(139,46,248,0.4); }
+.btn-ghost {
+  display: inline-flex; align-items: center; gap: 0.4rem;
+  border: 1.5px solid var(--v); color: var(--v); padding: 0.9rem 2.2rem; border-radius: 50px;
+  font-size: 0.85rem; font-weight: 600; text-decoration: none; letter-spacing: 0.02em;
+  transition: background .2s, transform .2s;
+}
+.btn-ghost:hover { background: var(--v3); transform: translateY(-2px); }
+.scroll-hint {
+  position: absolute; bottom: 2.2rem; left: 50%; transform: translateX(-50%);
+  display: flex; flex-direction: column; align-items: center; gap: 0.4rem;
+  font-size: 0.62rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--muted);
+  animation: bounce 2s 1.5s ease-in-out infinite;
+}
+.scroll-hint::after {
+  content: ''; width: 1px; height: 32px;
+  background: linear-gradient(to bottom, var(--v), transparent);
+}
+
+/* ── STATS BAR ── */
+.stats-bar {
+  background: var(--dark); padding: 2.2rem 2rem;
+  display: flex; flex-wrap: wrap; justify-content: center; gap: 4rem; text-align: center;
+}
+.stat-num {
+  font-family: 'Fraunces', serif; font-size: 2.6rem; font-weight: 300; color: var(--v2);
+}
+.stat-label { font-size: 0.68rem; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(255,255,255,0.35); margin-top: 0.25rem; }
+
+/* ── SHARED SECTION ── */
+section { padding: 6rem 2rem; }
+.section-pill {
+  display: inline-block; font-size: 0.68rem; font-weight: 600; letter-spacing: 0.12em;
+  text-transform: uppercase; color: var(--v); background: var(--v3);
+  border: 1px solid rgba(139,46,248,0.18); padding: 0.3rem 0.9rem; border-radius: 50px;
+  margin-bottom: 1.1rem;
+}
+.section-title {
+  font-family: 'Fraunces', serif; font-size: clamp(1.9rem, 4.5vw, 3rem);
+  font-weight: 300; line-height: 1.15; margin-bottom: 0.7rem;
+}
+.section-title em { font-style: italic; color: var(--v); }
+.section-sub {
+  max-width: 540px; font-size: 0.95rem; line-height: 1.8; color: var(--mid); font-weight: 400;
+}
+.centered { text-align: center; }
+.centered .section-sub { margin: 0 auto 3.5rem; }
+
+/* ── DEMO SECTION ── */
+.demo-section {
+  background: var(--dark);
+  position: relative; overflow: hidden;
+}
+.demo-section::before {
+  content: ''; position: absolute; top: -200px; right: -150px;
+  width: 600px; height: 600px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(139,46,248,0.18) 0%, transparent 65%);
+  pointer-events: none;
+}
+.demo-section::after {
+  content: ''; position: absolute; bottom: -150px; left: -100px;
+  width: 500px; height: 500px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(240,40,124,0.12) 0%, transparent 65%);
+  pointer-events: none;
+}
+.demo-inner {
+  max-width: 860px; margin: 0 auto;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;
+  position: relative; z-index: 1;
+}
+.demo-section .section-pill { color: var(--pk); background: rgba(240,40,124,0.12); border-color: rgba(240,40,124,0.25); }
+.demo-section .section-title { color: #fff; }
+.demo-section .section-title em { color: var(--pk); font-style: italic; }
+.demo-lead { font-size: 1rem; line-height: 1.75; color: rgba(255,255,255,0.55); margin: 1rem 0 1.8rem; }
+.demo-features { list-style: none; margin-bottom: 2rem; }
+.demo-features li {
+  display: flex; align-items: flex-start; gap: 0.7rem;
+  font-size: 0.9rem; color: rgba(255,255,255,0.7); padding: 0.45rem 0;
+}
+.demo-features li::before {
+  content: ''; flex-shrink: 0; width: 18px; height: 18px; margin-top: 2px;
+  border-radius: 50%; background: var(--tl); display: flex; align-items: center; justify-content: center;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 10 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 4l2.5 2.5L9 1' stroke='%230D0420' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat; background-position: center; background-size: 10px;
+}
+.demo-card {
+  background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 24px; padding: 2.4rem; text-align: center;
+  backdrop-filter: blur(8px);
+}
+.demo-card-tag {
+  font-size: 0.68rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--pk); margin-bottom: 1.2rem;
+}
+.demo-old-price {
+  font-size: 1.1rem; color: rgba(255,255,255,0.3);
+  text-decoration: line-through; margin-bottom: 0.2rem;
+}
+.demo-new-price {
+  display: flex; align-items: flex-start; justify-content: center; gap: 0.3rem; margin-bottom: 0.4rem;
+}
+.demo-new-price .cur { font-size: 1.2rem; color: #fff; font-weight: 600; margin-top: 0.4rem; }
+.demo-new-price .num {
+  font-family: 'Fraunces', serif; font-size: 4.5rem; font-weight: 300; color: #fff; line-height: 1;
+}
+.demo-new-price .mxn { font-size: 0.75rem; color: rgba(255,255,255,0.4); align-self: flex-end; margin-bottom: 0.5rem; }
+.demo-note { font-size: 0.78rem; color: rgba(255,255,255,0.4); margin-bottom: 1.8rem; line-height: 1.55; }
+.demo-note strong { color: var(--tl); font-weight: 500; }
+.btn-demo {
+  display: flex; align-items: center; justify-content: center; gap: 0.5rem; width: 100%;
+  background: var(--pk); color: #fff; padding: 1rem; border-radius: 50px; border: none;
+  font-family: 'Plus Jakarta Sans', sans-serif; font-size: 0.88rem; font-weight: 600;
+  cursor: pointer; text-decoration: none; letter-spacing: 0.02em;
+  transition: background .2s, transform .15s;
+  box-shadow: 0 4px 24px rgba(240,40,124,0.4);
+}
+.btn-demo:hover { background: #d0206b; transform: scale(1.02); }
+
+/* ── PACKAGES ── */
+.packages-section { background: var(--white); }
+.packages-grid {
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  gap: 1rem; max-width: 1200px; margin: 0 auto;
+}
+.pkg {
+  border: 1.5px solid var(--border); border-radius: 20px;
+  overflow: hidden; display: flex; flex-direction: column;
+  background: var(--bg); transition: transform .3s, box-shadow .3s;
+}
+.pkg:hover { transform: translateY(-4px); box-shadow: 0 16px 48px rgba(139,46,248,0.1); }
+.pkg.featured {
+  border-color: var(--v); background: var(--white);
+  box-shadow: 0 8px 32px rgba(139,46,248,0.14);
+}
+.pkg-top {
+  padding: 1.6rem 1.5rem 1.4rem;
+  border-bottom: 1px solid var(--border);
+  position: relative;
+}
+.pkg-badge {
+  display: inline-block; font-size: 0.58rem; font-weight: 700; letter-spacing: 0.16em;
+  text-transform: uppercase; padding: 0.25rem 0.7rem; border-radius: 50px; margin-bottom: 0.75rem;
+  background: var(--v3); color: var(--v);
+}
+.pkg-badge.hot { background: var(--v); color: #fff; }
+.pkg-name {
+  font-family: 'Fraunces', serif; font-size: 1.5rem; font-weight: 300; color: var(--dark); margin-bottom: 0.25rem;
+}
+.pkg-price { display: flex; align-items: flex-end; gap: 0.2rem; margin-top: 0.8rem; }
+.pkg-price-cur { font-size: 0.9rem; color: var(--mid); margin-bottom: 0.25rem; }
+.pkg-price-num { font-family: 'Fraunces', serif; font-size: 2.6rem; font-weight: 300; color: var(--dark); line-height: 1; }
+.pkg-price-mxn { font-size: 0.7rem; color: var(--muted); margin-bottom: 0.2rem; }
+.pkg-body { padding: 1.4rem 1.5rem; flex: 1; }
+.pkg-group {
+  font-size: 0.58rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--v); margin: 1.1rem 0 0.4rem;
+}
+.pkg-group:first-child { margin-top: 0; }
+.pkg-features { list-style: none; }
+.pkg-features li {
+  font-size: 0.82rem; padding: 0.22rem 0 0.22rem 1.3rem; position: relative; line-height: 1.45;
+}
+.pkg-features li.yes { color: var(--dark); }
+.pkg-features li.yes::before {
+  content: ''; position: absolute; left: 0; top: 0.55rem;
+  width: 14px; height: 14px; border-radius: 50%;
+  background: var(--tl);
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 10 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 4l2.5 2.5L9 1' stroke='%230D0420' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat; background-position: center; background-size: 8px;
+}
+.pkg-features li.no {
+  color: var(--muted); text-decoration: line-through; opacity: 0.45;
+}
+.pkg-features li.no::before {
+  content: ''; position: absolute; left: 0; top: 0.6rem;
+  width: 14px; height: 14px; border-radius: 50%;
+  background: rgba(139,46,248,0.06);
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 10 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M2 8L8 2M2 2l6 6' stroke='%238B7BA8' stroke-width='1.3' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat; background-position: center; background-size: 8px;
+}
+.pkg-foot { padding: 1.2rem 1.5rem 1.6rem; }
+.pkg-wa {
+  display: flex; align-items: center; justify-content: center; gap: 0.5rem; width: 100%;
+  padding: 0.8rem; border-radius: 50px; border: none;
+  font-family: 'Plus Jakarta Sans', sans-serif; font-size: 0.8rem; font-weight: 600;
+  letter-spacing: 0.02em; cursor: pointer; text-decoration: none;
+  transition: background .2s, transform .15s;
+}
+.pkg-wa.light { background: var(--v3); color: var(--v); }
+.pkg-wa.light:hover { background: var(--v); color: #fff; }
+.pkg-wa.dark { background: var(--v); color: #fff; box-shadow: 0 4px 16px rgba(139,46,248,0.3); }
+.pkg-wa.dark:hover { background: var(--dark2); }
+
+/* ── ALBUM SECTION ── */
+.album-section {
+  background: linear-gradient(135deg, var(--dark) 0%, var(--dark2) 100%);
+  position: relative; overflow: hidden;
+}
+.album-section::before {
+  content: ''; position: absolute; top: 0; right: 0; bottom: 0; left: 0;
+  background:
+    radial-gradient(ellipse 60% 80% at 90% 50%, rgba(139,46,248,0.15) 0%, transparent 60%),
+    radial-gradient(ellipse 50% 60% at 10% 50%, rgba(6,214,160,0.08) 0%, transparent 60%);
+  pointer-events: none;
+}
+.album-inner {
+  max-width: 960px; margin: 0 auto;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center;
+  position: relative; z-index: 1;
+}
+.album-section .section-pill { color: var(--tl); background: rgba(6,214,160,0.12); border-color: rgba(6,214,160,0.2); }
+.album-section .section-title { color: #fff; }
+.album-section .section-title em { color: var(--tl); }
+.album-desc { font-size: 0.95rem; line-height: 1.8; color: rgba(255,255,255,0.5); margin: 1rem 0 1.8rem; }
+.album-features { list-style: none; display: flex; flex-direction: column; gap: 0.7rem; margin-bottom: 2rem; }
+.album-features li { display: flex; align-items: center; gap: 0.8rem; font-size: 0.9rem; color: rgba(255,255,255,0.8); }
+.album-features li::before {
+  content: ''; flex-shrink: 0; width: 20px; height: 20px; border-radius: 50%;
+  background: rgba(6,214,160,0.15); border: 1px solid rgba(6,214,160,0.35);
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 10 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 4l2.5 2.5L9 1' stroke='%2306D6A0' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat; background-position: center; background-size: 10px;
+}
+.album-pricing {
+  background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 20px; padding: 2rem; text-align: center;
+}
+.album-pricing-label { font-size: 0.68rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--tl); margin-bottom: 1rem; }
+.album-included {
+  display: inline-flex; align-items: center; gap: 0.4rem;
+  background: rgba(6,214,160,0.12); border: 1px solid rgba(6,214,160,0.25);
+  color: var(--tl); padding: 0.4rem 1rem; border-radius: 50px;
+  font-size: 0.78rem; font-weight: 600; margin-bottom: 1rem;
+}
+.album-individual {
+  font-size: 0.82rem; color: rgba(255,255,255,0.4); margin-bottom: 1.2rem;
+  padding-top: 1rem; border-top: 1px solid rgba(255,255,255,0.08);
+}
+.album-individual strong {
+  font-family: 'Fraunces', serif; font-size: 1.6rem; font-weight: 300; color: #fff; display: block; margin-bottom: 0.2rem;
+}
+.btn-album {
+  display: flex; align-items: center; justify-content: center; gap: 0.5rem; width: 100%;
+  background: var(--tl); color: var(--dark); padding: 0.9rem; border-radius: 50px; border: none;
+  font-family: 'Plus Jakarta Sans', sans-serif; font-size: 0.85rem; font-weight: 700;
+  cursor: pointer; text-decoration: none; letter-spacing: 0.02em;
+  transition: opacity .2s, transform .15s;
+}
+.btn-album:hover { opacity: 0.88; transform: scale(1.02); }
+
+/* ── PROCESS ── */
+.process-section { background: var(--bg); }
+.steps {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1.2rem; max-width: 1000px; margin: 0 auto;
+}
+.step {
+  background: var(--white); border: 1.5px solid var(--border);
+  border-radius: 18px; padding: 1.8rem;
+  transition: border-color .2s, transform .2s;
+}
+.step:hover { border-color: var(--v2); transform: translateY(-3px); }
+.step-num {
+  font-family: 'Fraunces', serif; font-size: 2.8rem; font-weight: 300;
+  color: rgba(139,46,248,0.15); line-height: 1; margin-bottom: 0.7rem;
+}
+.step-title { font-size: 0.9rem; font-weight: 700; color: var(--dark); margin-bottom: 0.5rem; }
+.step-desc { font-size: 0.82rem; line-height: 1.65; color: var(--mid); }
+
+/* ── TESTIMONIALS ── */
+.testimonials-section { background: var(--white); }
+.testi-grid {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+  gap: 1.2rem; max-width: 980px; margin: 0 auto;
+}
+.testi {
+  background: var(--bg); border: 1.5px solid var(--border);
+  border-radius: 18px; padding: 1.8rem;
+  transition: border-color .2s;
+}
+.testi:hover { border-color: var(--v2); }
+.testi-accent { width: 28px; height: 3px; background: var(--v); border-radius: 2px; margin-bottom: 1.2rem; }
+.testi-text {
+  font-family: 'Fraunces', serif; font-size: 1.05rem; font-style: italic;
+  line-height: 1.72; color: var(--dark); margin-bottom: 1.3rem;
+}
+.testi-author { font-size: 0.73rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); }
+
+/* ── EXTRAS ── */
+.extras-section { background: var(--bg); }
+.extras-grid {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 1rem; max-width: 860px; margin: 0 auto 2.5rem;
+}
+.extra-card {
+  background: var(--white); border: 1.5px solid var(--border); border-radius: 16px;
+  padding: 1.5rem; text-align: center; transition: border-color .2s, transform .2s;
+}
+.extra-card:hover { border-color: var(--v2); transform: translateY(-3px); }
+.extra-name { font-weight: 700; font-size: 0.88rem; color: var(--dark); margin-bottom: 0.35rem; }
+.extra-desc { font-size: 0.78rem; color: var(--mid); line-height: 1.5; margin-bottom: 0.8rem; }
+.extra-price { font-family: 'Fraunces', serif; font-size: 1.5rem; font-weight: 300; color: var(--v); }
+
+/* ── CTA ── */
+.cta-section {
+  background: var(--v); text-align: center; position: relative; overflow: hidden;
+}
+.cta-section::before {
+  content: ''; position: absolute; inset: 0;
+  background: radial-gradient(circle at 70% 50%, rgba(240,40,124,0.25) 0%, transparent 55%);
+  pointer-events: none;
+}
+.cta-section .section-title { color: #fff; position: relative; z-index: 1; }
+.cta-section .section-title em { color: rgba(255,255,255,0.7); }
+.cta-section .section-sub { color: rgba(255,255,255,0.65); margin: 0 auto 2.5rem; position: relative; z-index: 1; }
+.btn-cta-wa {
+  display: inline-flex; align-items: center; gap: 0.7rem;
+  background: var(--wa); color: #fff; padding: 1.1rem 2.8rem; border-radius: 50px;
+  font-size: 0.95rem; font-weight: 700; text-decoration: none; letter-spacing: 0.02em;
+  transition: background .2s, transform .2s; position: relative; z-index: 1;
+  box-shadow: 0 8px 28px rgba(0,0,0,0.25);
+}
+.btn-cta-wa:hover { background: var(--wa2); transform: translateY(-3px); }
+
+/* ── FOOTER ── */
+footer { background: var(--dark); padding: 4rem 2rem 2.5rem; }
+.footer-inner {
+  max-width: 1100px; margin: 0 auto;
+  display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 3rem;
+}
+.footer-brand .footer-logo { display: flex; align-items: center; margin-bottom: 1rem; }
+.footer-brand p { font-size: 0.82rem; color: rgba(255,255,255,0.35); line-height: 1.7; max-width: 240px; text-align: center; }
+.footer-col h4 { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(255,255,255,0.4); margin-bottom: 1rem; }
+.footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 0.55rem; }
+.footer-col ul li a { font-size: 0.84rem; color: rgba(255,255,255,0.55); text-decoration: none; transition: color .2s; }
+.footer-col ul li a:hover { color: var(--v2); }
+.footer-col ul li { font-size: 0.84rem; color: rgba(255,255,255,0.55); }
+.footer-bottom {
+  max-width: 1100px; margin: 2.5rem auto 0;
+  padding-top: 1.5rem; border-top: 1px solid rgba(255,255,255,0.07);
+  display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem;
+}
+.footer-bottom p { font-size: 0.75rem; color: rgba(255,255,255,0.25); }
+.footer-bottom .wa-link {
+  display: inline-flex; align-items: center; gap: 0.4rem;
+  background: rgba(37,211,102,0.1); color: var(--wa); border: 1px solid rgba(37,211,102,0.2);
+  padding: 0.4rem 1rem; border-radius: 50px; font-size: 0.75rem; font-weight: 600;
+  text-decoration: none; transition: background .2s;
+}
+.footer-bottom .wa-link:hover { background: rgba(37,211,102,0.18); }
+
+/* ── FLOATING WA ── */
+.wa-float {
+  position: fixed; bottom: 1.8rem; right: 1.8rem; z-index: 300;
+  width: 56px; height: 56px; border-radius: 50%;
+  background: var(--wa); display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 4px 20px rgba(37,211,102,0.45);
+  text-decoration: none; transition: transform .2s, background .2s, opacity .4s;
+  opacity: 0; pointer-events: none;
+}
+.wa-float.visible { opacity: 1; pointer-events: auto; animation: pulse 2.5s infinite; }
+.wa-float:hover { transform: scale(1.1); background: var(--wa2); }
+.wa-float svg { width: 26px; height: 26px; fill: #fff; }
+
+/* WA SVG path helper */
+.wa-path-1 { d: path("M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"); }
+
+/* ── ANIMATIONS ── */
+@keyframes fadeIn { from { opacity:0 } to { opacity:1 } }
+@keyframes fadeUp { from { opacity:0; transform:translateY(20px) } to { opacity:1; transform:translateY(0) } }
+@keyframes bounce {
+  0%,100% { transform:translateX(-50%) translateY(0) }
+  50% { transform:translateX(-50%) translateY(7px) }
+}
+@keyframes pulse {
+  0%,100% { box-shadow:0 4px 20px rgba(37,211,102,.45) }
+  50% { box-shadow:0 4px 32px rgba(37,211,102,.72) }
+}
+
+/* ── SPLASH ── */
+.splash {
+  position: fixed; inset: 0; z-index: 9999;
+  background: var(--dark); display: flex; align-items: center; justify-content: center;
+  flex-direction: column; gap: 1.2rem;
+  transition: opacity .5s ease, visibility .5s ease;
+}
+.splash.hidden { opacity: 0; visibility: hidden; pointer-events: none; }
+.splash-logo { width: 180px; animation: splashPop .6s .2s cubic-bezier(.34,1.56,.64,1) both; }
+.splash-bar-wrap {
+  width: 80px; height: 2px; background: rgba(255,255,255,0.1); border-radius: 2px; overflow: hidden;
+  animation: fadeIn .4s .5s ease both;
+}
+.splash-bar {
+  height: 100%; width: 0%; background: var(--v2); border-radius: 2px;
+  animation: loadBar 1.2s .5s ease forwards;
+}
+@keyframes splashPop { from { opacity:0; transform:scale(.8) } to { opacity:1; transform:scale(1) } }
+@keyframes loadBar { from { width:0% } to { width:100% } }
+
+/* ── RESPONSIVE ── */
+@media (max-width:1024px) {
+  .packages-grid { grid-template-columns: repeat(2, 1fr); }
+  .demo-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+  .album-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+  .footer-inner { grid-template-columns: 1fr 1fr; gap: 2rem; }
+}
+
+@media (max-width:640px) {
+  /* Nav */
+  nav { padding: 0.85rem 1.2rem; grid-template-columns: 1fr auto 1fr; }
+  .nav-logo img { height: 28px; }
+  .nav-links { display: none; }
+
+  /* Hero */
+  .hero { padding: 7rem 1.4rem 4rem; }
+  .hero h1 { font-size: clamp(2.4rem, 11vw, 3.2rem); }
+  .hero-sub { font-size: 0.95rem; }
+  .hero-btns { flex-direction: column; align-items: center; }
+  .btn-primary, .btn-ghost { width: 100%; max-width: 280px; justify-content: center; padding: 1rem 2rem; }
+
+  /* Stats */
+  .stats-bar { gap: 2rem; padding: 2rem 1.4rem; }
+  .stat-num { font-size: 2.2rem; }
+
+  /* Sections */
+  section { padding: 3.5rem 1.2rem; }
+
+  /* Demo */
+  .demo-inner { grid-template-columns: 1fr; gap: 2rem; }
+  .demo-card { padding: 1.8rem 1.4rem; }
+  .demo-new-price .num { font-size: 3.6rem; }
+
+  /* Packages — 1 column, scrollable horizontally feels bad, stack instead */
+  .packages-grid { grid-template-columns: 1fr; gap: 1rem; }
+  .pkg-top { padding: 1.4rem 1.2rem 1.2rem; }
+  .pkg-body { padding: 1.2rem; }
+  .pkg-foot { padding: 1rem 1.2rem 1.4rem; }
+  .pkg-price-num { font-size: 2.4rem; }
+
+  /* Album */
+  .album-inner { grid-template-columns: 1fr; gap: 2rem; }
+  .album-pricing { padding: 1.6rem; }
+
+  /* Steps */
+  .steps { grid-template-columns: 1fr; gap: 0.8rem; }
+  .step { padding: 1.4rem; display: flex; align-items: flex-start; gap: 1rem; }
+  .step-num { font-size: 2rem; min-width: 2.5rem; margin-bottom: 0; }
+
+  /* Testimonials */
+  .testi-grid { grid-template-columns: 1fr; }
+
+  /* Extras */
+  .extras-grid { grid-template-columns: 1fr 1fr; }
+
+  /* CTA */
+  .btn-cta-wa { width: 100%; max-width: 320px; justify-content: center; padding: 1rem 1.5rem; }
+
+  /* Footer */
+  .footer-inner { grid-template-columns: 1fr; gap: 2rem; padding: 0; }
+  footer { padding: 3rem 1.4rem 2rem; }
+  .footer-bottom { flex-direction: column; text-align: center; gap: 1rem; }
+  .footer-col { display: none; }
+  .footer-col:last-child { display: block; }
+
+  /* Floating WA — bigger tap target */
+  .wa-float { width: 52px; height: 52px; bottom: 1.2rem; right: 1.2rem; }
+}
+</style>
+</head>
+<body>
+
+<!-- ── SPLASH ── -->
+<div class="splash" id="splash">
+  <img class="splash-logo" src="logo.png" alt="Digital Invita">
+  <div class="splash-bar-wrap"><div class="splash-bar"></div></div>
+</div>
+
+<!-- ── NAV ── -->
+<nav>
+<div></div>
+  <a class="nav-logo" href="#">
+    <img src="logo.png" alt="Digital Invita">
+  </a>
+  <ul class="nav-links">
+    <li><a href="#demo">Demo</a></li>
+    <li><a href="#paquetes">Paquetes</a></li>
+    <li><a href="#album">Álbum</a></li>
+    <li><a href="#proceso">Proceso</a></li>
+  </ul>
+</nav>
+
+<!-- ── HERO ── -->
+<section class="hero">
+  <div class="hero-pill">Invitaciones 100% digitales</div>
+  <h1>
+    Tu evento,<br>
+    <span class="line2">tu invitación perfecta</span>
+  </h1>
+  <p class="hero-sub">Diseños únicos, entrega en 48 horas y todo el proceso directo por WhatsApp. Así de fácil.</p>
+  <div class="hero-btns">
+    <a class="btn-primary" href="#paquetes">Ver paquetes</a>
+    <a class="btn-ghost" href="https://wa.me/525550591264?text=Hola!%20Quisiera%20ver%20ejemplos%20de%20sus%20invitaciones%20digitales." target="_blank">Ver ejemplos</a>
+  </div>
+  <div class="scroll-hint">Explorar</div>
+</section>
+
+<!-- ── STATS ── -->
+<div class="stats-bar">
+  <div><div class="stat-num">48h</div><div class="stat-label">Tiempo de entrega</div></div>
+  <div><div class="stat-num">100%</div><div class="stat-label">Clientes satisfechos</div></div>
+  <div><div class="stat-num">$199</div><div class="stat-label">Precio desde</div></div>
+</div>
+
+<!-- ── DEMO SECTION ── -->
+<section id="demo" class="demo-section">
+  <div class="demo-inner">
+    <div>
+      <div class="section-pill">Primero vélo, luego decídelo</div>
+      <h2 class="section-title">Solicita una <em>Demo</em> de tu evento</h2>
+      <p class="demo-lead">¿No estás seguro de cómo quedaría? Creamos una versión demo personalizada con tu nombre, tu fecha y tu estilo — para que la veas antes de comprometerte.</p>
+      <ul class="demo-features">
+        <li>Demo con tus datos reales</li>
+        <li>Lista en menos de 48 hrs</li>
+        <li>Los $50 se descuentan de tu paquete</li>
+        <li>Sin compromisos adicionales</li>
+      </ul>
+    </div>
+    <div class="demo-card">
+      <div class="demo-card-tag">Demo personalizada</div>
+      <div class="demo-old-price">$150 MXN</div>
+      <div class="demo-new-price">
+        <span class="cur">$</span>
+        <span class="num">50</span>
+        <span class="mxn">MXN<br>pago único</span>
+      </div>
+      <p class="demo-note"><strong>Se descuenta de tu paquete final.</strong><br>No pagas de más.</p>
+      <a class="btn-demo" href="https://wa.me/525550591264?text=Hola!%20Me%20interesa%20solicitar%20una%20*Demo%20por%20$50*%20para%20ver%20cómo%20quedaría%20mi%20invitación%20antes%20de%20decidirme.%20¿Podrían%20ayudarme?" target="_blank">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.124.556 4.118 1.528 5.845L.057 23.882l6.162-1.618A11.948 11.948 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.9 0-3.672-.502-5.205-1.378l-.374-.221-3.87 1.015 1.033-3.769-.244-.388A9.955 9.955 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+        Solicitar mi Demo
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ── PAQUETES ── -->
+<section id="paquetes" class="packages-section">
+  <div class="centered" style="margin-bottom:3rem;">
+    <div class="section-pill">Nuestros paquetes</div>
+    <h2 class="section-title">Elige el plan <em>ideal</em> para tu evento</h2>
+    <p class="section-sub centered" style="margin:0.5rem auto 0;">Todos incluyen diseño personalizado y entrega en 48 horas por WhatsApp.</p>
+  </div>
+
+  <div class="packages-grid">
+
+    <!-- BÁSICO -->
+    <div class="pkg">
+      <div class="pkg-top">
+        <div class="pkg-badge">Básico</div>
+        <h3 class="pkg-name">Básico</h3>
+        <div class="pkg-price">
+          <span class="pkg-price-cur">$</span>
+          <span class="pkg-price-num">199</span>
+          <span class="pkg-price-mxn">MXN</span>
+        </div>
+      </div>
+      <div class="pkg-body">
+        <p class="pkg-group">Acceso</p>
+        <ul class="pkg-features">
+          <li class="yes">Link único personalizado</li>
+        </ul>
+        <p class="pkg-group">Interactividad</p>
+        <ul class="pkg-features">
+          <li class="yes">Música en la invitación</li>
+          <li class="no">Cuenta regresiva</li>
+        </ul>
+        <p class="pkg-group">Datos del evento</p>
+        <ul class="pkg-features">
+          <li class="yes">Nombre y fecha</li>
+          <li class="yes">Mensaje breve</li>
+          <li class="no">Historia especial</li>
+        </ul>
+        <p class="pkg-group">Familia</p>
+        <ul class="pkg-features">
+          <li class="no">Padres / padrinos</li>
+        </ul>
+        <p class="pkg-group">Detalles del evento</p>
+        <ul class="pkg-features">
+          <li class="yes">1 ubicación con mapa</li>
+          <li class="no">Itinerario completo</li>
+        </ul>
+        <p class="pkg-group">Contenido visual</p>
+        <ul class="pkg-features">
+          <li class="yes">Fotografía principal</li>
+          <li class="no">Galería interactiva</li>
+        </ul>
+        <p class="pkg-group">Extras</p>
+        <ul class="pkg-features">
+          <li class="no">Dress code</li>
+          <li class="no">Lluvia de sobres</li>
+          <li class="no">RSVP</li>
+          <li class="no">Agregar al calendario</li>
+        </ul>
+        <p class="pkg-group">Álbum colaborativo</p>
+        <ul class="pkg-features">
+          <li class="no">Álbum digital</li>
+        </ul>
+      </div>
+      <div class="pkg-foot">
+        <a class="pkg-wa light" href="https://wa.me/525550591264?text=Hola!%20Me%20interesa%20el%20*Paquete%20Básico%20-%20$199*%20para%20mi%20invitación%20digital.%20¿Podrían%20darme%20más%20información?" target="_blank">
+          <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.124.556 4.118 1.528 5.845L.057 23.882l6.162-1.618A11.948 11.948 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.9 0-3.672-.502-5.205-1.378l-.374-.221-3.87 1.015 1.033-3.769-.244-.388A9.955 9.955 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+          Cotizar
+        </a>
+      </div>
+    </div>
+
+    <!-- ESENCIAL -->
+    <div class="pkg">
+      <div class="pkg-top">
+        <div class="pkg-badge">Esencial</div>
+        <h3 class="pkg-name">Esencial</h3>
+        <div class="pkg-price">
+          <span class="pkg-price-cur">$</span>
+          <span class="pkg-price-num">299</span>
+          <span class="pkg-price-mxn">MXN</span>
+        </div>
+      </div>
+      <div class="pkg-body">
+        <p class="pkg-group">Acceso</p>
+        <ul class="pkg-features">
+          <li class="yes">Link único personalizado</li>
+        </ul>
+        <p class="pkg-group">Interactividad</p>
+        <ul class="pkg-features">
+          <li class="yes">Música en la invitación</li>
+          <li class="yes">Cuenta regresiva</li>
+        </ul>
+        <p class="pkg-group">Datos del evento</p>
+        <ul class="pkg-features">
+          <li class="yes">Nombre y fecha</li>
+          <li class="yes">Mensaje especial</li>
+          <li class="no">Historia especial</li>
+        </ul>
+        <p class="pkg-group">Familia</p>
+        <ul class="pkg-features">
+          <li class="yes">Padres o padrinos</li>
+        </ul>
+        <p class="pkg-group">Detalles del evento</p>
+        <ul class="pkg-features">
+          <li class="yes">Ceremonia y/o recepción</li>
+          <li class="no">Itinerario completo</li>
+        </ul>
+        <p class="pkg-group">Contenido visual</p>
+        <ul class="pkg-features">
+          <li class="yes">Fotografía principal</li>
+          <li class="no">Galería interactiva</li>
+        </ul>
+        <p class="pkg-group">Extras</p>
+        <ul class="pkg-features">
+          <li class="yes">Dress code</li>
+          <li class="yes">Lluvia de sobres</li>
+          <li class="no">RSVP</li>
+          <li class="no">Agregar al calendario</li>
+        </ul>
+        <p class="pkg-group">Álbum colaborativo</p>
+        <ul class="pkg-features">
+          <li class="no">Álbum digital</li>
+        </ul>
+      </div>
+      <div class="pkg-foot">
+        <a class="pkg-wa light" href="https://wa.me/525550591264?text=Hola!%20Me%20interesa%20el%20*Paquete%20Esencial%20-%20$299*%20para%20mi%20invitación%20digital.%20¿Podrían%20darme%20más%20información?" target="_blank">
+          <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.124.556 4.118 1.528 5.845L.057 23.882l6.162-1.618A11.948 11.948 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.9 0-3.672-.502-5.205-1.378l-.374-.221-3.87 1.015 1.033-3.769-.244-.388A9.955 9.955 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+          Cotizar
+        </a>
+      </div>
+    </div>
+
+    <!-- COMPLETO -->
+    <div class="pkg featured">
+      <div class="pkg-top">
+        <div class="pkg-badge hot">Más popular</div>
+        <h3 class="pkg-name">Completo</h3>
+        <div class="pkg-price">
+          <span class="pkg-price-cur">$</span>
+          <span class="pkg-price-num">399</span>
+          <span class="pkg-price-mxn">MXN</span>
+        </div>
+      </div>
+      <div class="pkg-body">
+        <p class="pkg-group">Acceso</p>
+        <ul class="pkg-features">
+          <li class="yes">Link único personalizado</li>
+        </ul>
+        <p class="pkg-group">Interactividad</p>
+        <ul class="pkg-features">
+          <li class="yes">Música personalizada</li>
+          <li class="yes">Cuenta regresiva en tiempo real</li>
+        </ul>
+        <p class="pkg-group">Datos del evento</p>
+        <ul class="pkg-features">
+          <li class="yes">Nombre y fecha</li>
+          <li class="yes">Historia o mensaje especial</li>
+        </ul>
+        <p class="pkg-group">Familia</p>
+        <ul class="pkg-features">
+          <li class="yes">Presentación con padres</li>
+          <li class="yes">Padrinos</li>
+        </ul>
+        <p class="pkg-group">Detalles del evento</p>
+        <ul class="pkg-features">
+          <li class="yes">Ceremonia con hora y mapa</li>
+          <li class="yes">Recepción con hora y mapa</li>
+          <li class="yes">Itinerario completo</li>
+        </ul>
+        <p class="pkg-group">Contenido visual</p>
+        <ul class="pkg-features">
+          <li class="yes">Fotografía principal</li>
+          <li class="yes">Galería interactiva</li>
+        </ul>
+        <p class="pkg-group">Extras</p>
+        <ul class="pkg-features">
+          <li class="yes">Dress code</li>
+          <li class="yes">Lluvia de sobres / mesa regalos</li>
+          <li class="yes">RSVP con invitados</li>
+          <li class="yes">Agregar al calendario</li>
+        </ul>
+        <p class="pkg-group">Álbum colaborativo</p>
+        <ul class="pkg-features">
+          <li class="no">Álbum digital</li>
+        </ul>
+      </div>
+      <div class="pkg-foot">
+        <a class="pkg-wa dark" href="https://wa.me/525550591264?text=Hola!%20Me%20interesa%20el%20*Paquete%20Completo%20-%20$399*%20para%20mi%20invitación%20digital.%20¿Podrían%20darme%20más%20información?" target="_blank">
+          <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.124.556 4.118 1.528 5.845L.057 23.882l6.162-1.618A11.948 11.948 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.9 0-3.672-.502-5.205-1.378l-.374-.221-3.87 1.015 1.033-3.769-.244-.388A9.955 9.955 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+          Cotizar
+        </a>
+      </div>
+    </div>
+
+    <!-- PLUS -->
+    <div class="pkg">
+      <div class="pkg-top">
+        <div class="pkg-badge" style="background:var(--pk2);color:var(--pk);">Premium</div>
+        <h3 class="pkg-name">Plus</h3>
+        <div class="pkg-price">
+          <span class="pkg-price-cur">$</span>
+          <span class="pkg-price-num">599</span>
+          <span class="pkg-price-mxn">MXN</span>
+        </div>
+      </div>
+      <div class="pkg-body">
+        <p class="pkg-group">Acceso</p>
+        <ul class="pkg-features">
+          <li class="yes">Link único personalizado</li>
+        </ul>
+        <p class="pkg-group">Interactividad</p>
+        <ul class="pkg-features">
+          <li class="yes">Música personalizada</li>
+          <li class="yes">Cuenta regresiva en tiempo real</li>
+        </ul>
+        <p class="pkg-group">Datos del evento</p>
+        <ul class="pkg-features">
+          <li class="yes">Nombre y fecha</li>
+          <li class="yes">Historia o mensaje especial</li>
+        </ul>
+        <p class="pkg-group">Familia</p>
+        <ul class="pkg-features">
+          <li class="yes">Presentación con padres</li>
+          <li class="yes">Padrinos</li>
+        </ul>
+        <p class="pkg-group">Detalles del evento</p>
+        <ul class="pkg-features">
+          <li class="yes">Ceremonia con hora y mapa</li>
+          <li class="yes">Recepción con hora y mapa</li>
+          <li class="yes">Itinerario completo</li>
+        </ul>
+        <p class="pkg-group">Contenido visual</p>
+        <ul class="pkg-features">
+          <li class="yes">Fotografía principal</li>
+          <li class="yes">Galería interactiva</li>
+        </ul>
+        <p class="pkg-group">Extras</p>
+        <ul class="pkg-features">
+          <li class="yes">Dress code</li>
+          <li class="yes">Lluvia de sobres / mesa regalos</li>
+          <li class="yes">RSVP con invitados</li>
+          <li class="yes">Agregar al calendario</li>
+        </ul>
+        <p class="pkg-group">Álbum colaborativo</p>
+        <ul class="pkg-features">
+          <li class="yes">Álbum digital incluido</li>
+        </ul>
+      </div>
+      <div class="pkg-foot">
+        <a class="pkg-wa light" href="https://wa.me/525550591264?text=Hola!%20Me%20interesa%20el%20*Paquete%20Plus%20-%20$599*%20para%20mi%20invitación%20digital.%20¿Podrían%20darme%20más%20información?" target="_blank">
+          <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.124.556 4.118 1.528 5.845L.057 23.882l6.162-1.618A11.948 11.948 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.9 0-3.672-.502-5.205-1.378l-.374-.221-3.87 1.015 1.033-3.769-.244-.388A9.955 9.955 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+          Cotizar
+        </a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ── ÁLBUM DIGITAL ── -->
+<section id="album" class="album-section">
+  <div class="album-inner">
+    <div>
+      <div class="section-pill">Álbum digital colaborativo</div>
+      <h2 class="section-title">Los recuerdos de <em>todos, juntos</em></h2>
+      <p class="album-desc">Un espacio digital donde tus invitados pueden subir sus fotos del evento en tiempo real. El recuerdo de tu celebración construido por quienes más quieres.</p>
+      <ul class="album-features">
+        <li>Acceso mediante link o código QR</li>
+        <li>Los invitados suben fotos desde su celular</li>
+        <li>Disponible en tiempo real durante el evento</li>
+        <li>Incluido en el Paquete Plus</li>
+      </ul>
+    </div>
+    <div class="album-pricing">
+      <div class="album-pricing-label">Disponibilidad</div>
+      <div class="album-included">Incluido en Paquete Plus</div>
+      <div class="album-individual">
+        ¿Tienes otro paquete? Agrégalo por separado:<br>
+        <strong>$250 MXN</strong>
+        contratación individual
+      </div>
+      <a class="btn-album" href="https://wa.me/525550591264?text=Hola!%20Me%20interesa%20el%20*Álbum%20Digital%20Colaborativo*%20para%20mi%20evento.%20¿Podrían%20darme%20más%20información?" target="_blank">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.124.556 4.118 1.528 5.845L.057 23.882l6.162-1.618A11.948 11.948 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.9 0-3.672-.502-5.205-1.378l-.374-.221-3.87 1.015 1.033-3.769-.244-.388A9.955 9.955 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+        Preguntar por el álbum
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ── EXTRAS ── -->
+<section class="extras-section">
+  <div class="centered" style="margin-bottom:2.5rem;">
+    <div class="section-pill">Servicios adicionales</div>
+    <h2 class="section-title">Complementa tu <em>invitación</em></h2>
+    <p class="section-sub" style="margin:0.5rem auto 0;">Agrega cualquiera de estos servicios a tu paquete.</p>
+  </div>
+  <div class="extras-grid">
+    <div class="extra-card">
+      <div class="extra-name">Pases digitales</div>
+      <p class="extra-desc">Pase personalizado e individual para cada invitado</p>
+      <div class="extra-price">$75 <span style="font-size:0.72rem;color:var(--muted);font-weight:400;">MXN</span></div>
+    </div>
+    <div class="extra-card">
+      <div class="extra-name">Entrega urgente</div>
+      <p class="extra-desc">Diseño y entrega en menos de 12 horas hábiles</p>
+      <div class="extra-price">$100 <span style="font-size:0.72rem;color:var(--muted);font-weight:400;">MXN</span></div>
+    </div>
+    <div class="extra-card">
+      <div class="extra-name">Sección adicional</div>
+      <p class="extra-desc">Agrega cualquier sección extra a tu invitación</p>
+      <div class="extra-price">$50 <span style="font-size:0.72rem;color:var(--muted);font-weight:400;">MXN</span></div>
+    </div>
+  </div>
+  <div style="text-align:center;margin-top:2rem;">
+    <a class="btn-ghost" href="https://wa.me/525550591264?text=Hola!%20Quiero%20información%20sobre%20los%20servicios%20adicionales%20para%20mi%20invitación." target="_blank">Preguntar por extras</a>
+  </div>
+</section>
+
+<!-- ── PROCESO ── -->
+<section id="proceso" class="process-section">
+  <div class="centered" style="margin-bottom:3rem;">
+    <div class="section-pill">Cómo funciona</div>
+    <h2 class="section-title">Del pedido a tu <em>invitación lista</em></h2>
+    <p class="section-sub" style="margin:0.5rem auto 0;">Todo el proceso directo por WhatsApp, sin complicaciones.</p>
+  </div>
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">01</div>
+      <div class="step-title">Contáctanos</div>
+      <p class="step-desc">Escríbenos por WhatsApp indicando el tipo de evento y el paquete que te interesa.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">02</div>
+      <div class="step-title">Personalizamos juntos</div>
+      <p class="step-desc">Definimos colores, música, fotos y todos los detalles de tu evento sobre nuestra plantilla base.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">03</div>
+      <div class="step-title">Personalización</div>
+      <p class="step-desc">Agregamos tus datos, fotos, música y todo. Revisamos juntos hasta que quede perfecta.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">04</div>
+      <div class="step-title">Lista en 48h</div>
+      <p class="step-desc">Recibes tu link personalizado listo para compartir por WhatsApp y redes sociales.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ── TESTIMONIOS ── -->
+<section class="testimonials-section">
+  <div class="centered" style="margin-bottom:3rem;">
+    <div class="section-pill">Lo que dicen</div>
+    <h2 class="section-title">Familias que <em>confiaron</em> en nosotros</h2>
+  </div>
+  <div class="testi-grid" style="max-width:980px;margin:0 auto;">
+    <div class="testi">
+      <div class="testi-accent"></div>
+      <p class="testi-text">"La invitación de la boda de mi hija quedó preciosa. Todos mis invitados preguntaron quién la hizo. Totalmente recomendados."</p>
+      <p class="testi-author">Martha G. &middot; CDMX</p>
+    </div>
+    <div class="testi">
+      <div class="testi-accent"></div>
+      <p class="testi-text">"Súper rápidos y profesionales. Pedí la invitación de los XV y en menos de 48 horas ya tenía el link listo para compartir con todos."</p>
+      <p class="testi-author">Roberto L. &middot; Guadalajara</p>
+    </div>
+    <div class="testi">
+      <div class="testi-accent"></div>
+      <p class="testi-text">"Todo por WhatsApp, cómodo y fácil. El diseño superó mis expectativas y el precio es muy accesible. Volvería a contratarlos sin dudarlo."</p>
+      <p class="testi-author">Valeria M. &middot; Monterrey</p>
+    </div>
+  </div>
+</section>
+
+<!-- ── CTA ── -->
+<section class="cta-section">
+  <div class="section-pill" style="background:rgba(255,255,255,0.15);color:#fff;border-color:rgba(255,255,255,0.2);">Comienza ahora</div>
+  <h2 class="section-title" style="margin-top:0.5rem;">Haz tu evento <em>inolvidable</em></h2>
+  <p class="section-sub">Escríbenos ahora y recibe atención personalizada. Sin compromisos, sin esperas.</p>
+  <a class="btn-cta-wa" href="https://wa.me/525550591264?text=Hola!%20Quiero%20cotizar%20una%20invitación%20digital.%20¿Podrían%20ayudarme?" target="_blank">
+    <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.124.556 4.118 1.528 5.845L.057 23.882l6.162-1.618A11.948 11.948 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.9 0-3.672-.502-5.205-1.378l-.374-.221-3.87 1.015 1.033-3.769-.244-.388A9.955 9.955 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+    Chatear por WhatsApp ahora
+  </a>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="footer-logo" style="justify-content:center;">
+        <img src="logo.png" alt="Digital Invita" style="height:32px;filter:brightness(0) invert(1);opacity:0.85;">
+      </div>
+      <p>Invitaciones digitales premium para cada evento especial. Diseño, personalización y entrega en 48 horas.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Paquetes</h4>
+      <ul>
+        <li><a href="#paquetes">Básico — $199</a></li>
+        <li><a href="#paquetes">Esencial — $299</a></li>
+        <li><a href="#paquetes">Completo — $399</a></li>
+        <li><a href="#paquetes">Plus — $599</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Servicios</h4>
+      <ul>
+        <li><a href="#demo">Demo por $50</a></li>
+        <li><a href="#album">Álbum colaborativo</a></li>
+        <li>Pases digitales</li>
+        <li>Entrega urgente</li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contacto</h4>
+      <ul>
+        <li>WhatsApp directo</li>
+        <li>Respuesta en minutos</li>
+        <li>Lun — Dom · 9am — 9pm</li>
+        <li><a href="https://wa.me/525550591264" target="_blank" style="color:var(--tl);">55 5059 1264</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2025 Digital Invita &middot; Todos los derechos reservados &middot; México</p>
+    <a class="wa-link" href="https://wa.me/525550591264?text=Hola!%20Quiero%20cotizar%20una%20invitación%20digital." target="_blank">
+      <svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.124.556 4.118 1.528 5.845L.057 23.882l6.162-1.618A11.948 11.948 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.9 0-3.672-.502-5.205-1.378l-.374-.221-3.87 1.015 1.033-3.769-.244-.388A9.955 9.955 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+      Escribir ahora
+    </a>
+  </div>
+</footer>
+
+<!-- ── FLOATING WA ── -->
+<a class="wa-float" href="https://wa.me/525550591264?text=Hola!%20Necesito%20información%20sobre%20sus%20invitaciones%20digitales." target="_blank" title="Abrir WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.124.556 4.118 1.528 5.845L.057 23.882l6.162-1.618A11.948 11.948 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.9 0-3.672-.502-5.205-1.378l-.374-.221-3.87 1.015 1.033-3.769-.244-.388A9.955 9.955 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+</a>
+
+<script>
+// Splash
+const splash = document.getElementById('splash');
+setTimeout(() => splash.classList.add('hidden'), 1800);
+
+// Floating WA shows after hero
+const floatBtn = document.querySelector('.wa-float');
+const hero = document.querySelector('.hero');
+const observer = new IntersectionObserver(([e]) => {
+  floatBtn.classList.toggle('visible', !e.isIntersecting);
+}, { threshold: 0.1 });
+observer.observe(hero);
+</script>
+</body>
+</html>
