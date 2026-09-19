@@ -1,0 +1,421 @@
+{
+  "meta": {
+    "pageTitle": "Mis XV | Sofia Montes",
+    "ogTitle": "",
+    "ogDescription": "Acompáñanos a celebrar este día tan especial",
+    "publicUrl": ""
+  },
+  "event": {
+    "template": "xv",
+    "label": "Mis XV",
+    "age": "",
+    "celebrantName": "Sofia Montes",
+    "person1Name": "",
+    "person2Name": "",
+    "eventDate": "2027-03-11T15:33",
+    "eventEnd": "2027-03-11T23:11",
+    "calendarTitle": "",
+    "timeZone": "America/Mexico_City",
+    "eventLocation": "Top Salón Obispado",
+    "rsvpCountryCode": "52",
+    "rsvpPhone": "5550591264"
+  },
+  "theme": {
+    "bgTop": "#ffc2d4",
+    "bgMid": "#f7c5d3",
+    "bgBottom": "#ffe0ea",
+    "gold500": "#f2c06f",
+    "sectionTitle": "#8f3154",
+    "scriptColor": "#a14463",
+    "timelineColor": "#b85d7a",
+    "timelineTimeColor": "#964063",
+    "timelineTitleColor": "#8d3254",
+    "timelineDescColor": "#964063",
+    "timelineFont": "Cormorant Garamond",
+    "locationTitleColor": "#8e3154",
+    "locationTimeColor": "#964063",
+    "locationPlaceColor": "#964063",
+    "particleColor": "#ff0000",
+    "buttonBg": "#8f3154",
+    "buttonText": "#ffffff",
+    "fieldLabel": "#7e2d4d",
+    "fieldText": "#3d2332",
+    "closingColor": "#8f3154",
+    "openingKicker": "#ffffff",
+    "openingTitle": "#ffffff",
+    "openingAccent": "#ffffff",
+    "text": "#382536",
+    "muted": "#6e5264",
+    "sectionOpacity": 20,
+    "sectionFrameEnabled": true,
+    "separatorMode": "line",
+    "separatorImage": "",
+    "separatorImageWidth": 70,
+    "openingOpacity": 50,
+    "openingEffectEnabled": true,
+    "particlesEnabled": true,
+    "particleDensity": 100,
+    "particleSize": 100,
+    "particleBrightness": 100,
+    "backgroundImage": "media/ffi.png",
+    "backgroundImageOpacity": 34,
+    "backgroundImagePositionX": 15,
+    "heroGroupOffsetY": 0,
+    "heroLabelOffsetY": 0,
+    "heroNameOffsetY": 0,
+    "heroDateOffsetY": 0,
+    "sectionBackgroundEnabled": false,
+    "sectionBackgroundConfigured": true,
+    "sectionBackgroundVersion": 1,
+    "sectionBackgroundImage": "",
+    "sectionBackgroundOpacity": 70,
+    "sectionBackgroundPositionX": 50,
+    "sectionBackgroundFit": "cover",
+    "styleMode": "classic",
+    "bodyFont": "Cormorant Garamond",
+    "scriptFont": "Tangerine",
+    "displayFont": "Tangerine"
+  },
+  "sectionStyles": {
+    "story": {
+      "inheritTheme": true,
+      "titleColor": "#8f3154",
+      "timeColor": "#8f3154",
+      "textColor": "#382536",
+      "buttonBg": "#8f3154",
+      "buttonText": "#ffffff"
+    },
+    "parents": {
+      "inheritTheme": true,
+      "titleColor": "#8f3154",
+      "timeColor": "#8f3154",
+      "textColor": "#382536",
+      "buttonBg": "#8f3154",
+      "buttonText": "#ffffff"
+    },
+    "godparents": {
+      "inheritTheme": true,
+      "titleColor": "#8f3154",
+      "timeColor": "#8f3154",
+      "textColor": "#382536",
+      "buttonBg": "#8f3154",
+      "buttonText": "#ffffff"
+    },
+    "ceremony": {
+      "inheritTheme": true,
+      "titleColor": "#8e3154",
+      "timeColor": "#964063",
+      "textColor": "#964063",
+      "buttonBg": "#8f3154",
+      "buttonText": "#ffffff"
+    },
+    "reception": {
+      "inheritTheme": true,
+      "titleColor": "#8e3154",
+      "timeColor": "#964063",
+      "textColor": "#964063",
+      "buttonBg": "#8f3154",
+      "buttonText": "#ffffff"
+    },
+    "countdown": {
+      "inheritTheme": true,
+      "titleColor": "#8f3154",
+      "timeColor": "#8f3154",
+      "textColor": "#382536",
+      "buttonBg": "#8f3154",
+      "buttonText": "#ffffff"
+    },
+    "timeline": {
+      "inheritTheme": true,
+      "titleColor": "#8f3154",
+      "timeColor": "#8f3154",
+      "textColor": "#382536",
+      "buttonBg": "#8f3154",
+      "buttonText": "#ffffff"
+    },
+    "dress": {
+      "inheritTheme": true,
+      "titleColor": "#8f3154",
+      "timeColor": "#8f3154",
+      "textColor": "#382536",
+      "buttonBg": "#8f3154",
+      "buttonText": "#ffffff"
+    },
+    "adultNotice": {
+      "inheritTheme": true,
+      "titleColor": "#8f3154",
+      "timeColor": "#8f3154",
+      "textColor": "#382536",
+      "buttonBg": "#8f3154",
+      "buttonText": "#ffffff"
+    },
+    "rsvp": {
+      "inheritTheme": true,
+      "titleColor": "#8f3154",
+      "timeColor": "#8f3154",
+      "textColor": "#382536",
+      "buttonBg": "#8f3154",
+      "buttonText": "#ffffff"
+    },
+    "gallery": {
+      "inheritTheme": true,
+      "titleColor": "#8f3154",
+      "timeColor": "#8f3154",
+      "textColor": "#382536",
+      "buttonBg": "#8f3154",
+      "buttonText": "#ffffff"
+    },
+    "gifts": {
+      "inheritTheme": true,
+      "titleColor": "#8f3154",
+      "timeColor": "#8f3154",
+      "textColor": "#382536",
+      "buttonBg": "#8f3154",
+      "buttonText": "#ffffff"
+    },
+    "album": {
+      "inheritTheme": true,
+      "titleColor": "#8f3154",
+      "timeColor": "#8f3154",
+      "textColor": "#382536",
+      "buttonBg": "#8f3154",
+      "buttonText": "#ffffff"
+    },
+    "agenda": {
+      "inheritTheme": true,
+      "titleColor": "#8f3154",
+      "timeColor": "#8f3154",
+      "textColor": "#382536",
+      "buttonBg": "#8f3154",
+      "buttonText": "#ffffff"
+    },
+    "closing": {
+      "inheritTheme": true,
+      "titleColor": "#8f3154",
+      "timeColor": "#8f3154",
+      "textColor": "#382536",
+      "buttonBg": "#8f3154",
+      "buttonText": "#ffffff"
+    }
+  },
+  "images": {
+    "hero": "media/fprincipal.jpg",
+    "heroType": "image",
+    "og": "media/portada-og.jpg",
+    "story": "media/fhistoria.jpg",
+    "seal": "media/sello_cera.png",
+    "dress": "media/v2.png",
+    "envelope": "media/s.png",
+    "surprise": "media/r.png",
+    "gallery": [
+      "media/g1.jpg",
+      "media/g2.jpg",
+      "media/g3.jpg",
+      "media/g4.jpg",
+      "media/g5.jpg",
+      "media/g6.jpg"
+    ],
+    "galleryMediaTypes": [
+      "image",
+      "image",
+      "image",
+      "image",
+      "image",
+      "image"
+    ],
+    "galleryLayouts": [
+      "auto",
+      "auto",
+      "auto",
+      "auto",
+      "auto",
+      "auto"
+    ]
+  },
+  "audio": {
+    "src": "cancio.mp3",
+    "showControl": true
+  },
+  "story": {
+    "title": "Mi historia",
+    "paragraph1": "Hoy celebro no solo mis 15 años, sino cada sonrisa que iluminó mi camino, cada aprendizaje que fortaleció mi corazón y cada sueño que, con amor y esperanza, me ha traído hasta este momento tan especial de mi vida.",
+    "paragraph2": "Aquí termina un capítulo lleno de recuerdos que atesoraré por siempre y comienza uno nuevo, donde la ilusión, la luz y los sueños por cumplir marcan el inicio de todo lo que está por venir.",
+    "showImage": true,
+    "imageSize": 100
+  },
+  "family": {
+    "parentsEyebrow": "En compañía de mis padres",
+    "parentsNamesHtml": "Adriana López Hernández<br>&amp;<br>Javier Montes Ramírez",
+    "parentsGroups": [],
+    "parentsInviteText": "Tenemos el honor de invitarles a celebrar mis XV años.",
+    "godparentsEyebrow": "Mis padrinos",
+    "godparentsNamesHtml": "Gabriela Ruiz Mendoza<br>&amp;<br>Alejandro Hernández García",
+    "godparentsItems": []
+  },
+  "ceremony": {
+    "title": "Ceremonia",
+    "time": "15:30 hrs",
+    "place": "Parroquia del Sagrado Corazón de Jesús",
+    "showPlaceDetail": false,
+    "placeDetail": "",
+    "mediaMode": "preview",
+    "iconSrc": "media/cereminia.png",
+    "mapEmbed": "https://www.google.com/maps/embed?pb=!3m2!1ses-419!2smx!4v1784406042559!5m2!1ses-419!2smx!6m8!1m7!1sW1KCTr9gtixxUy_1R9Ew2w!2m2!1d25.57659913575704!2d-103.5004368052986!3f202.70293243660157!4f15.440215328659107!5f1.7540701999762476",
+    "photoSrc": "",
+    "mapLink": "https://maps.app.goo.gl/zTPBsYBQpmymGXzX6"
+  },
+  "reception": {
+    "title": "Recepción",
+    "time": "17:00 hrs",
+    "place": "Centro de Convenciones Posada del Río",
+    "showPlaceDetail": false,
+    "placeDetail": "",
+    "mediaMode": "preview",
+    "iconSrc": "media/recepcion.png",
+    "mapLink": "https://maps.app.goo.gl/DwvQGpkTec4dTeVr8",
+    "mapEmbed": "https://www.google.com/maps/embed?pb=!3m2!1ses-419!2smx!4v1784406356581!5m2!1ses-419!2smx!6m8!1m7!1sSGFER0nSRDCKnO10adm2DA!2m2!1d25.55719968234142!2d-103.4943993146966!3f68.19951991550872!4f17.272107396622715!5f0.4000000000000002",
+    "photoSrc": ""
+  },
+  "timeline": {
+    "items": [
+      {
+        "time": "15:30 hrs",
+        "title": "Ceremonia",
+        "desc": "Parroquia del Sagrado Corazón de Jesús."
+      },
+      {
+        "time": "17:00 hrs",
+        "title": "Recepción",
+        "desc": "Centro de Convenciones Posada del Río."
+      },
+      {
+        "time": "18:00 hrs",
+        "title": "Comida",
+        "desc": "Un momento para brindar y compartir."
+      },
+      {
+        "time": "20:00 hrs",
+        "title": "Vals",
+        "desc": "Presentación de Sofia."
+      }
+    ]
+  },
+  "countdown": {
+    "title": "Faltan pocos días",
+    "intro": "Cada día nos acerca a la celebración de una meta alcanzada.",
+    "caption": "",
+    "captionColor": "#6e5264",
+    "style": "classic"
+  },
+  "dressCode": {
+    "title": "Dress Code",
+    "value": "Formal",
+    "note": "Rosa reservado para la quinceañera."
+  },
+  "adultNotice": {
+    "title": "Una celebración para adultos",
+    "text": "Con mucho cariño, hemos preparado esta celebración exclusivamente para adultos.\nAgradecemos mucho su comprensión."
+  },
+  "gifts": {
+    "title": "Opciones de regalo",
+    "intro": "Tu presencia es el regalo más valioso para mí, pero si deseas tener un detalle, aquí encontrarás algunas opciones pensadas con mucho cariño.",
+    "option1Title": "Lluvia de sobres",
+    "option1Copy": "Si lo prefieres, podrás acompañarme con un sobre el día del evento. Será un detalle recibido con muchísimo cariño y gratitud.",
+    "showOption1": true,
+    "option2Title": "Regalo sorpresa",
+    "option2Copy": "También puedes sorprenderme con un detalle especial elegido por ti. Lo importante será el cariño con el que venga.",
+    "showOption2": true,
+    "linksIntro": "Si prefieres elegir un detalle en línea, también puedes apoyarte en estas opciones de mesa de regalos:",
+    "showLinks": false,
+    "links": [
+      {
+        "label": "Mesa de regalos Liverpool",
+        "href": "https://www.liverpool.com.mx/tienda/mesa-de-regalos",
+        "style": "primary",
+        "image": "",
+        "showImage": false
+      },
+      {
+        "label": "Celebra Palacio",
+        "href": "https://www.elpalaciodehierro.com/sucursales/palacio-mitikah.html",
+        "style": "secondary",
+        "image": "",
+        "showImage": false
+      }
+    ]
+  },
+  "album": {
+    "title": "Álbum digital",
+    "copy": "Comparte las mejores fotos de este gran día y conserva en un solo lugar los recuerdos más especiales.",
+    "buttonLabel": "Ver álbum digital",
+    "buttonHref": "#",
+    "showQr": true,
+    "qrBackgroundOpacity": 100
+  },
+  "customSections": [],
+  "rsvp": {
+    "familyMode": false,
+    "showGuestCount": true,
+    "maxGuests": 6,
+    "advancedConfirmationEnabled": true,
+    "personalizedPassesEnabled": true,
+    "reservedPassesText": "Nos hará mucha ilusión compartir este momento con ustedes.",
+    "qrDotStyle": "dots",
+    "qrColor": "#000000",
+    "qrAccentColor": "#8e3154",
+    "qrBackgroundColor": "#ffffff",
+    "receiptTitle": "¡Gracias por confirmar!",
+    "receiptText": "Nos dará mucho gusto compartir este momento con ustedes. Nos vemos pronto.",
+    "confirmMessage": " Confirmación de asistencia \n\nCon mucha alegría confirmo mi presencia para celebrar {celebracion}.\n\nNombre: {nombre}\n{pases}\n\nSerá un honor acompañarte en este día tan especial.",
+    "declineMessage": " {evento} \n\nHola, mi nombre es {nombre}.\n\nCon mucho cariño quiero decir que en esta ocasión no podré acompañarte,\npero te deseo un día maravilloso y lleno de felicidad.",
+    "familyConfirmMessage": " Confirmación de asistencia familiar \n\nHola, somos la familia {familia}.\nCon mucha alegría confirmamos nuestra asistencia para celebrar {celebracion}.\n\nAsistiremos {cantidad}:\n{integrantes}\n\nSerá un gusto acompañarles en este día tan especial.",
+    "familyDeclineMessage": " {evento} \n\nHola, somos la familia {familia}.\nCon mucho cariño queremos avisar que en esta ocasión no podremos acompañarles.\n\nLes deseamos una celebración maravillosa y llena de momentos inolvidables."
+  },
+  "sections": {
+    "story": true,
+    "parents": true,
+    "godparents": true,
+    "ceremony": true,
+    "reception": true,
+    "timeline": true,
+    "countdown": true,
+    "gallery": true,
+    "dress": true,
+    "adultNotice": false,
+    "rsvp": true,
+    "gifts": true,
+    "agenda": true,
+    "album": false,
+    "closing": true
+  },
+  "layout": {
+    "sectionOrder": [
+      "story",
+      "parents",
+      "godparents",
+      "ceremony",
+      "reception",
+      "timeline",
+      "countdown",
+      "gallery",
+      "dress",
+      "rsvp",
+      "gifts",
+      "agenda",
+      "album",
+      "closing",
+      "adultNotice"
+    ]
+  },
+  "closing": {
+    "note": "Gracias por ser parte de este momento inolvidable"
+  },
+  "brand": {
+    "creditText": "Creado por Digital Invita",
+    "creditHref": "https://www.facebook.com/profile.php?id=61587804296779&locale=es_LA",
+    "ctaLabel": "Contáctanos",
+    "ctaHref": "https://wa.me/525550591264?text=Hola%2C%20estoy%20interesado%28a%29%20en%20una%20invitaci%C3%B3n%20digital%20para%20mi%20evento.%20Me%20gustar%C3%ADa%20recibir%20m%C3%A1s%20informaci%C3%B3n%20sobre%20los%20dise%C3%B1os%2C%20precios%20y%20lo%20que%20incluye.",
+    "inheritTheme": true,
+    "footerBg": "#f7c5d3"
+  }
+}
