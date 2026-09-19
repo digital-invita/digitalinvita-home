@@ -1,0 +1,509 @@
+{
+  "meta": {
+    "pageTitle": "Nuestra Boda | Camila & Sebastián",
+    "ogTitle": "",
+    "ogDescription": "Celebra con nosotros el inicio de nuestra historia juntos.",
+    "publicUrl": ""
+  },
+  "event": {
+    "template": "wedding",
+    "label": "Nuestra Boda",
+    "age": "",
+    "celebrantName": "Camila & Sebastián",
+    "doubleCelebrantEnabled": false,
+    "celebrantName1": "Camila & Sebastián",
+    "celebrantName2": "",
+    "celebrantSeparator": "&",
+    "person1Name": "Camila",
+    "person2Name": "Sebastián",
+    "eventDate": "2026-11-21T17:30",
+    "eventEnd": "2026-11-22T01:00",
+    "calendarTitle": "Boda de Camila y Sebastián",
+    "timeZone": "America/Mexico_City",
+    "eventLocation": "Hacienda Santa Lucía",
+    "rsvpCountryCode": "52",
+    "rsvpPhone": "5550591264"
+  },
+  "theme": {
+    "bgTop": "#fbfaf5",
+    "bgMid": "#ece4d4",
+    "bgBottom": "#d8d1bd",
+    "gold500": "#b79355",
+    "sectionTitle": "#4f5a43",
+    "scriptColor": "#6f5a34",
+    "timelineColor": "#b79355",
+    "timelineTimeColor": "#7b6339",
+    "timelineTitleColor": "#2f332b",
+    "timelineDescColor": "#6f6a5f",
+    "timelineFont": "Cormorant Garamond",
+    "locationTitleColor": "#4f5a43",
+    "locationTimeColor": "#8a6e3d",
+    "locationPlaceColor": "#2f332b",
+    "particleColor": "#ffb029",
+    "buttonBg": "#6f785b",
+    "buttonText": "#ffffff",
+    "fieldLabel": "#5c614e",
+    "fieldText": "#2f332b",
+    "closingColor": "#4f5a43",
+    "heroLabelColor": "#fff8e8",
+    "heroNameColor": "#ffffff",
+    "heroDateColor": "#fff8e8",
+    "openingKicker": "#ffffff",
+    "openingTitle": "#ffffff",
+    "openingAccent": "#ffffff",
+    "text": "#2f332b",
+    "muted": "#6f6a5f",
+    "sectionOpacity": 14,
+    "sectionFrameEnabled": true,
+    "separatorMode": "line",
+    "separatorImage": "",
+    "separatorImageWidth": 70,
+    "openingOpacity": 50,
+    "openingEffectEnabled": true,
+    "particlesEnabled": true,
+    "particlesOverSectionsEnabled": true,
+    "particleDensity": 150,
+    "particleSize": 115,
+    "particleBrightness": 100,
+    "particleSpeed": 145,
+    "particleFastPercent": 20,
+    "appleHeroScrollEnabled": true,
+    "sectionScrollRevealEnabled": true,
+    "sectionRevealEffects": {
+      "story": true,
+      "parents": true,
+      "godparents": true,
+      "ceremony": true,
+      "reception": true,
+      "timeline": false,
+      "countdown": true,
+      "gallery": true,
+      "dress": true,
+      "adultNotice": true,
+      "rsvp": true,
+      "gifts": true,
+      "agenda": true,
+      "album": true,
+      "closing": true
+    },
+    "backgroundImage": "media/1fdbda.png",
+    "backgroundImageOpacity": 41,
+    "backgroundImagePositionX": 50,
+    "heroGroupOffsetY": 0,
+    "heroLabelOffsetY": 0,
+    "heroNameOffsetY": 0,
+    "heroDateOffsetY": 0,
+    "sectionBackgroundEnabled": false,
+    "sectionBackgroundConfigured": true,
+    "sectionBackgroundVersion": 1,
+    "sectionBackgroundImage": "",
+    "sectionBackgroundOpacity": 70,
+    "sectionBackgroundPositionX": 50,
+    "sectionBackgroundFit": "cover",
+    "styleMode": "classic",
+    "bodyFont": "Cormorant Garamond",
+    "scriptFont": "Tangerine",
+    "displayFont": "Tangerine"
+  },
+  "sectionStyles": {
+    "story": {
+      "inheritTheme": true,
+      "titleColor": "#4f5a43",
+      "timeColor": "#4f5a43",
+      "textColor": "#2f332b",
+      "buttonBg": "#6f785b",
+      "buttonText": "#ffffff"
+    },
+    "parents": {
+      "inheritTheme": true,
+      "titleColor": "#4f5a43",
+      "timeColor": "#4f5a43",
+      "textColor": "#2f332b",
+      "buttonBg": "#6f785b",
+      "buttonText": "#ffffff"
+    },
+    "godparents": {
+      "inheritTheme": true,
+      "titleColor": "#4f5a43",
+      "timeColor": "#4f5a43",
+      "textColor": "#2f332b",
+      "buttonBg": "#6f785b",
+      "buttonText": "#ffffff"
+    },
+    "ceremony": {
+      "inheritTheme": true,
+      "titleColor": "#4f5a43",
+      "timeColor": "#8a6e3d",
+      "textColor": "#2f332b",
+      "buttonBg": "#6f785b",
+      "buttonText": "#ffffff"
+    },
+    "reception": {
+      "inheritTheme": true,
+      "titleColor": "#4f5a43",
+      "timeColor": "#8a6e3d",
+      "textColor": "#2f332b",
+      "buttonBg": "#6f785b",
+      "buttonText": "#ffffff"
+    },
+    "countdown": {
+      "inheritTheme": true,
+      "titleColor": "#4f5a43",
+      "timeColor": "#4f5a43",
+      "textColor": "#2f332b",
+      "buttonBg": "#6f785b",
+      "buttonText": "#ffffff"
+    },
+    "timeline": {
+      "inheritTheme": true,
+      "titleColor": "#4f5a43",
+      "timeColor": "#4f5a43",
+      "textColor": "#2f332b",
+      "buttonBg": "#6f785b",
+      "buttonText": "#ffffff"
+    },
+    "dress": {
+      "inheritTheme": true,
+      "titleColor": "#4f5a43",
+      "timeColor": "#4f5a43",
+      "textColor": "#2f332b",
+      "buttonBg": "#6f785b",
+      "buttonText": "#ffffff"
+    },
+    "adultNotice": {
+      "inheritTheme": true,
+      "titleColor": "#4f5a43",
+      "timeColor": "#4f5a43",
+      "textColor": "#2f332b",
+      "buttonBg": "#6f785b",
+      "buttonText": "#ffffff"
+    },
+    "rsvp": {
+      "inheritTheme": true,
+      "titleColor": "#4f5a43",
+      "timeColor": "#4f5a43",
+      "textColor": "#2f332b",
+      "buttonBg": "#6f785b",
+      "buttonText": "#ffffff"
+    },
+    "gallery": {
+      "inheritTheme": true,
+      "titleColor": "#4f5a43",
+      "timeColor": "#4f5a43",
+      "textColor": "#2f332b",
+      "buttonBg": "#6f785b",
+      "buttonText": "#ffffff"
+    },
+    "gifts": {
+      "inheritTheme": true,
+      "titleColor": "#4f5a43",
+      "timeColor": "#4f5a43",
+      "textColor": "#2f332b",
+      "buttonBg": "#6f785b",
+      "buttonText": "#ffffff"
+    },
+    "album": {
+      "inheritTheme": true,
+      "titleColor": "#4f5a43",
+      "timeColor": "#4f5a43",
+      "textColor": "#2f332b",
+      "buttonBg": "#6f785b",
+      "buttonText": "#ffffff"
+    },
+    "agenda": {
+      "inheritTheme": true,
+      "titleColor": "#4f5a43",
+      "timeColor": "#4f5a43",
+      "textColor": "#2f332b",
+      "buttonBg": "#6f785b",
+      "buttonText": "#ffffff"
+    },
+    "closing": {
+      "inheritTheme": true,
+      "titleColor": "#4f5a43",
+      "timeColor": "#4f5a43",
+      "textColor": "#2f332b",
+      "buttonBg": "#6f785b",
+      "buttonText": "#ffffff"
+    }
+  },
+  "images": {
+    "hero": "media/fprincipal.jpg",
+    "heroType": "image",
+    "og": "media/portada-ogbda.jpg",
+    "story": "media/fhistoria.jpg",
+    "seal": "media/sello_cera.png",
+    "dress": "media/vestimenta.png",
+    "envelope": "media/1sobre.png",
+    "surprise": "media/sobre.png",
+    "gallery": [
+      "media/g1.jpg",
+      "media/g2.jpg",
+      "media/g3.jpg",
+      "media/g4.jpg",
+      "media/g5.jpg",
+      "media/g6.jpg"
+    ],
+    "galleryMediaTypes": [
+      "image",
+      "image",
+      "image",
+      "image",
+      "image",
+      "image"
+    ],
+    "galleryLayouts": [
+      "auto",
+      "auto",
+      "auto",
+      "auto",
+      "auto",
+      "auto"
+    ]
+  },
+  "audio": {
+    "src": "media/alex-warren---ordinary-wedding-version-official-music-video.mp3",
+    "showControl": true,
+    "muteVideos": true,
+    "loopVideos": true
+  },
+  "story": {
+    "title": "Nuestra historia",
+    "paragraph1": "Hay historias que comienzan sin avisar y, poco a poco, se convierten en hogar. La nuestra nació entre risas, conversaciones largas y sueños compartidos.",
+    "paragraph2": "Hoy queremos celebrar este amor rodeados de las personas que han sido parte de nuestro camino. Gracias por acompañarnos en el inicio de esta nueva etapa.",
+    "showImage": true,
+    "imageSize": 80
+  },
+  "family": {
+    "parentsEyebrow": "Con la bendición de nuestros padres",
+    "parentsNamesHtml": "",
+    "parentsGroups": [
+      {
+        "label": "Padres de la novia",
+        "namesHtml": "Laura Méndez Aguilar<br>&amp;<br>Fernando Rivas Ortega"
+      },
+      {
+        "label": "Padres del novio",
+        "namesHtml": "Patricia Salgado Vega<br>&amp;<br>Jorge Navarro Luna"
+      }
+    ],
+    "showGrandparents": false,
+    "grandparentsEyebrow": "Con la bendición de nuestros abuelos",
+    "grandparentsNamesHtml": "",
+    "parentsInviteText": "Con mucha alegría tenemos el honor de invitarlos a celebrar nuestra unión en matrimonio.",
+    "godparentsEyebrow": "Nuestros padrinos",
+    "godparentsNamesHtml": "",
+    "splitGodparentsEnabled": false,
+    "godparentNoteSize": 100,
+    "godparentsFirstNote": "",
+    "godparentsFirstNamesHtml": "",
+    "godparentsSecondNote": "",
+    "godparentsSecondNamesHtml": "",
+    "godparentsItems": [
+      {
+        "role": "Padrinos de velación",
+        "namesHtml": "Daniela Rivas<br>&amp;<br>Andrés Molina",
+        "note": ""
+      },
+      {
+        "role": "Padrinos de argollas",
+        "namesHtml": "María José Salgado<br>&amp;<br>Emilio Herrera",
+        "note": ""
+      },
+      {
+        "role": "Padrinos de arras",
+        "namesHtml": "Regina Torres<br>&amp;<br>Mateo Cárdenas",
+        "note": ""
+      },
+      {
+        "role": "Padrinos de lazo",
+        "namesHtml": "Ana Sofía Vega<br>&amp;<br>Luis Fernando Paredes",
+        "note": ""
+      },
+      {
+        "role": "Madrina de ramo",
+        "namesHtml": "Isabella Rivas",
+        "note": ""
+      },
+      {
+        "role": "Madrina de Biblia y rosario",
+        "namesHtml": "Claudia Aguilar",
+        "note": ""
+      }
+    ]
+  },
+  "ceremony": {
+    "title": "Ceremonia religiosa",
+    "time": "17:30 hrs",
+    "place": "Catedral Metropolitana de Nuestra Señora de Monterrey",
+    "showPlaceDetail": true,
+    "placeDetail": "",
+    "mediaMode": "preview",
+    "iconSrc": "media/cereminia.png",
+    "mapEmbed": "<iframe src=\"https://www.google.com/maps/embed?pb=!3m2!1ses-419!2smx!4v1787621255331!5m2!1ses-419!2smx!6m8!1m7!1stwX_EVMpwDVt-2qoMwTIsg!2m2!1d25.66582019736701!2d-100.3100947438021!3f108.81264334807804!4f24.12884054642778!5f0.7820865974627469\" width=\"600\" height=\"450\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"strict-origin-when-cross-origin\"></iframe>",
+    "photoSrc": "",
+    "videoSrc": "",
+    "mapLink": "https://maps.app.goo.gl/vShNfLaLfzaxKzxq9"
+  },
+  "reception": {
+    "title": "Recepción",
+    "time": "19:30 hrs",
+    "place": "La Casona de Santa Lucía",
+    "showPlaceDetail": true,
+    "placeDetail": "",
+    "mediaMode": "preview",
+    "iconSrc": "media/recepcion.png",
+    "mapLink": "https://maps.app.goo.gl/1qzEZ23zA4BDh5zX7",
+    "mapEmbed": "<iframe src=\"https://www.google.com/maps/embed?pb=!3m2!1ses-419!2smx!4v1787621395366!5m2!1ses-419!2smx!6m8!1m7!1sM-kk2wV8XAwcO99SC5fgjA!2m2!1d25.67040259357355!2d-100.3061861394723!3f151.64044712778383!4f6.852157227223543!5f0.4000000000000002\" width=\"600\" height=\"450\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"strict-origin-when-cross-origin\"></iframe>",
+    "photoSrc": "",
+    "videoSrc": ""
+  },
+  "timeline": {
+    "items": [
+      {
+        "time": "17:30 hrs",
+        "title": "Ceremonia religiosa",
+        "desc": "Compartiremos nuestra unión ante Dios."
+      },
+      {
+        "time": "19:30 hrs",
+        "title": "Recepción",
+        "desc": "Bienvenida en Hacienda Santa Lucía."
+      },
+      {
+        "time": "20:15 hrs",
+        "title": "Cena",
+        "desc": "Un momento para compartir la mesa."
+      },
+      {
+        "time": "21:15 hrs",
+        "title": "Primer baile",
+        "desc": "Nuestro primer baile como esposos."
+      },
+      {
+        "time": "21:45 hrs",
+        "title": "Brindis",
+        "desc": "Celebramos con familia y amigos."
+      },
+      {
+        "time": "22:15 hrs",
+        "title": "Fiesta",
+        "desc": "Que empiece la celebración."
+      }
+    ]
+  },
+  "countdown": {
+    "title": "Faltan pocos días",
+    "intro": "La cuenta regresiva ha comenzado para celebrar nuestro gran día.",
+    "caption": "Gracias por formar parte de nuestra historia.",
+    "captionColor": "#4f5a43",
+    "style": "classic"
+  },
+  "dressCode": {
+    "title": "Código de vestimenta",
+    "value": "Formal ",
+    "note": "Agradecemos reservar el color blanco para la novia."
+  },
+  "adultNotice": {
+    "title": "Una celebración para adultos",
+    "text": "Con mucho cariño, hemos preparado esta celebración exclusivamente para adultos.\nAgradecemos mucho su comprensión."
+  },
+  "gifts": {
+    "title": "Mesa de regalos",
+    "intro": "Tu presencia es nuestro mejor regalo. Si deseas tener un detalle con nosotros, lo recibiremos con mucho cariño.",
+    "option1Title": "Lluvia de sobres",
+    "option1Copy": "Si prefieres acompañarnos con un sobre el día del evento, será recibido con gratitud.",
+    "showOption1": true,
+    "option2Title": "Regalo sorpresa",
+    "option2Copy": "También puedes elegir un detalle especial para nuestro nuevo hogar.",
+    "showOption2": true,
+    "linksIntro": "También puedes visitar nuestras mesas de regalos:",
+    "showLinks": false,
+    "links": []
+  },
+  "album": {
+    "title": "Álbum de nuestra boda",
+    "copy": "Comparte las fotografías de nuestra boda y ayúdanos a guardar cada momento desde tu mirada.",
+    "buttonLabel": "Ver álbum digital",
+    "buttonHref": "#",
+    "showQr": true,
+    "qrBackgroundOpacity": 100
+  },
+  "customSections": [],
+  "rsvp": {
+    "familyMode": true,
+    "showGuestCount": true,
+    "maxGuests": 6,
+    "advancedConfirmationEnabled": false,
+    "personalizedPassesEnabled": false,
+    "reservedPassesText": "Nos hará mucha ilusión compartir este momento con ustedes.",
+    "qrDotStyle": "dots",
+    "qrColor": "#393238",
+    "qrAccentColor": "#a4774d",
+    "qrBackgroundColor": "#ffffff",
+    "receiptTitle": "¡Gracias por confirmar!",
+    "receiptText": "Nos dará mucho gusto compartir este momento con ustedes. Nos vemos pronto.",
+    "confirmMessage": " Confirmación de asistencia \n\nCon mucha alegría confirmo mi presencia para celebrar {celebracion}.\n\nNombre: {nombre}\n{pases}\n\nSerá un honor acompañarte en este día tan especial.",
+    "declineMessage": " {evento} \n\nHola, mi nombre es {nombre}.\n\nCon mucho cariño quiero decir que en esta ocasión no podré acompañarte,\npero te deseo un día maravilloso y lleno de felicidad.",
+    "familyConfirmMessage": " Confirmación de asistencia familiar \n\nHola, somos la familia {familia}.\nCon mucha alegría confirmamos nuestra asistencia para celebrar {celebracion}.\n\nAsistiremos {cantidad}:\n{integrantes}\n\nSerá un gusto acompañarles en este día tan especial.",
+    "familyDeclineMessage": " {evento} \n\nHola, somos la familia {familia}.\nCon mucho cariño queremos avisar que en esta ocasión no podremos acompañarles.\n\nLes deseamos una celebración maravillosa y llena de momentos inolvidables.",
+    "firebase": {
+      "enabled": false,
+      "validateInvites": false,
+      "invalidInviteMessage": "Solicita una invitación válida para poder confirmar.",
+      "eventId": "evento-digital",
+      "collectionRoot": "rsvp",
+      "apiKey": "",
+      "authDomain": "",
+      "projectId": "",
+      "appId": ""
+    }
+  },
+  "sections": {
+    "story": true,
+    "parents": true,
+    "godparents": true,
+    "ceremony": true,
+    "reception": true,
+    "timeline": true,
+    "countdown": true,
+    "gallery": true,
+    "dress": true,
+    "adultNotice": false,
+    "rsvp": true,
+    "gifts": true,
+    "agenda": true,
+    "album": false,
+    "closing": true
+  },
+  "layout": {
+    "sectionOrder": [
+      "story",
+      "parents",
+      "godparents",
+      "ceremony",
+      "reception",
+      "timeline",
+      "countdown",
+      "gallery",
+      "dress",
+      "adultNotice",
+      "rsvp",
+      "gifts",
+      "agenda",
+      "album",
+      "closing"
+    ]
+  },
+  "closing": {
+    "note": "Gracias por acompañarnos en el inicio de esta nueva historia"
+  },
+  "brand": {
+    "creditText": "Creado por Digital Invita",
+    "creditHref": "https://www.facebook.com/profile.php?id=61587804296779&locale=es_LA",
+    "ctaLabel": "Contáctanos",
+    "ctaHref": "https://wa.me/525550591264?text=Hola%2C%20estoy%20interesado%28a%29%20en%20una%20invitaci%C3%B3n%20digital%20para%20mi%20evento.%20Me%20gustar%C3%ADa%20recibir%20m%C3%A1s%20informaci%C3%B3n%20sobre%20los%20dise%C3%B1os%2C%20precios%20y%20lo%20que%20incluye.",
+    "inheritTheme": true,
+    "footerBg": "#ece4d4"
+  }
+}
